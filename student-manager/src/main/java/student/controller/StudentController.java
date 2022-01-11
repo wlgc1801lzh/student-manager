@@ -1,5 +1,8 @@
 package student.controller;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.bind.annotation.*;
 import student.dao.StudentDao;
@@ -30,7 +33,9 @@ public class StudentController {
      * @return Student集合对象
      */
     @GetMapping("/list")
-    public List<Student> list(Student param) {
+    public Page<Student> list(Student param, int page, int size) {
+        //分页条件
+        Pageable pageable = PageRequest.of(page, size);
         //查询条件
         Specification<Student> specification = (root, query, builder) -> {
             List<Predicate> predicates = new ArrayList<>();
@@ -49,7 +54,7 @@ public class StudentController {
             return builder.and(predicates.toArray(new Predicate[0]));
         };
 
-        return studentDao.findAll(specification);
+        return studentDao.findAll(specification,pageable);
     }
 
     /**
