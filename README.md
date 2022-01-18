@@ -12,10 +12,8 @@
 1. Spring Boot 2.6.2
 2. Spring Data JPA 2.6.0
 3. Spring Seucrity 5.6.1
-4. Spring Session 2.6.1
-5. Spring Data Redis 2.6.0
-6. Lombok 1.18.22
-7. Maven 3.8.1
+4. Lombok 1.18.22
+5. Maven 3.8.1
 
 ### 前端
 1. [Vite 2.7.2](https://vitejs.cn/) —— 构建项目
