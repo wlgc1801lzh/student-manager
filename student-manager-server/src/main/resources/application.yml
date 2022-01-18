@@ -6,9 +6,3 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
-  main:
-    allow-circular-references: true
-  redis:
-    host: 192.168.30.150
-  session:
-    store-type: redis
